@@ -19,6 +19,7 @@ public:
         for (int i = 0; i < SIZE; i++){
             prices[i] = (rand() % (MAX - MIN + 1) + MIN) / 100.0;
         }
+    }
     Chair(int l, double p[SIZE]) {
         prices = new double[SIZE];
         legs = l;
@@ -46,8 +47,9 @@ public:
     void print() {
         cout << "CHAIR DATA - legs: " << legs << endl;
         cout << "Price history: " ;
-        for (int i = 0; i < SIZE; i++)
+        for (int i = 0; i < SIZE; i++){
             cout << prices[i] << " ";
+        }
         cout << endl << "Historical avg price: " << getAveragePrices();
         cout << endl << endl;
     }
@@ -55,7 +57,6 @@ public:
     ~Chair(){
         delete[] prices;
     }
-}
 };
 
 int main() {
