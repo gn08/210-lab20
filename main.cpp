@@ -17,15 +17,14 @@ public:
         prices = new double[SIZE];
 //
         legs = rand() % 2 + 3;
-        for (int i = 0; i < SIZE; i++)
-//
+        for (int i = 0; i < SIZE; i++){
             prices[i] = (rand() % (MAX - MIN + 1) + MIN) / 100.0;
     }
-    Chair(int l) {
+    Chair(int l, double p[SIZE]) {
         prices = new double[SIZE];
         legs = l;
         for (int i = 0; i < SIZE; i++)
-            prices[i] = 0;
+            prices[i] = p[i];
     }
 
     // setters and getters
@@ -68,7 +67,7 @@ int main() {
 
     //creating dynamic chair object with constructor
     Chair *livingChair = new Chair(3, prices);
-    //livingChair->setPrices(525.25, 434.34, 252.52);
+    double prices[SIZE]= (525.25, 434.34, 252.52);
     livingChair->print();
     delete livingChair;
 
