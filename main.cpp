@@ -1,8 +1,11 @@
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 const int SIZE = 3;
+const int MIN = 10000, MAX = 99999;
 
 class Chair {
 private:
@@ -71,7 +74,10 @@ int main() {
 
     //creating dynamic array of chair objects
     Chair *collection = new Chair[SIZE];
-    
+    for (int i = 0; i < SIZE; i++){
+        collection[i].print();
+    }
+    delete[] collection;
     
     return 0;
 }
